@@ -1,14 +1,14 @@
 include:
   - board: eyelash_sofle_right
     shield: nice_view_custom
-    artifact-name: right.uf2
+    artifact-name: right
 
   - board: eyelash_sofle_left
     shield: nice_view
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n
-    artifact-name: left.uf2
+    artifact-name: left
 
   - board: eyelash_sofle_left
     shield: settings_reset
-    artifact-name: settings_reset.uf2
+    artifact-name: settings_reset
