@@ -1,0 +1,19 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        layers {
+            LAYER_0 {
+                bindings = <
+                    // Home row - Caps Lock becomes Command
+                    &kp LEFT_GUI  &kp A &kp S &kp D &kp F &kp G &kp LEFT_ARROW &kp H &kp J &kp K &kp L &kp SEMI &kp APOS
+
+                    // Bottom row - Mac thumb cluster
+                    &kp C_MUTE      &kp LEFT_CONTROL   &kp LEFT_ALT    &kp LEFT_GUI &kp SPACE
+                    &mo 1           &kp ENTER      &mo 2           &kp SPACE        &kp DELETE
+                    &kp RIGHT_CONTROL &kp RETURN
+                >;
+            };
+        };
+    };
+};
