@@ -85,11 +85,23 @@
 &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans      &rgb_ug RGB_EFF  &bl BL_TOG   &rgb_ug RGB_TOG
 &trans        &bt BT_CLR    &trans        &trans        &trans        &trans          &mmv MOVE_DOWN   &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans      &rgb_ug RGB_EFR  &trans       &trans
 &trans        &out OUT_USB  &out OUT_BLE  &trans        &trans        &trans          &mmv MOVE_LEFT   &trans           &trans           &trans      &trans           &trans       &trans
-&trans        &sys_reset    &trans        &bootloader   &trans        &kp CAPS        &mmv MOVE_RIGHT  &trans           &trans           &sys_reset  &soft_off        &bootloader  &trans
+&trans        &sys_reset    &trans        &bootloader   &trans        &kp CAPS        &mmv MOVE_RIGHT  &trans           &trans           &sys_reset  &soft_off        &bootloader  &tog 4
 &trans        &trans        &trans        &trans        &trans        &trans          &mkp LCLK        &trans           &trans           &trans      &trans           &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
+        };
+
+        MAC_LAYER {
+            bindings = <
+&trans      &trans            &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans      &trans             &trans      &trans
+&trans      &trans            &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans      &trans             &trans      &trans
+&kp LGUI    &trans            &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans      &trans             &trans      &trans
+&trans      &trans            &trans    &trans  &trans     &trans  &trans  &trans  &trans  &trans      &trans             &trans      &trans
+&trans      &kp LEFT_CONTROL  &kp LGUI  &trans  &trans     &trans  &trans  &trans  &trans  &trans      &trans             &trans
+            >;
+
+            display-name = "MAC_LAYER";
         };
     };
 
