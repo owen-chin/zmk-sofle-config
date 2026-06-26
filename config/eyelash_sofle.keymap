@@ -48,11 +48,23 @@
 &kp TAB           &kp Q         &kp W             &kp E         &kp R      &kp T     &kp DOWN_ARROW   &kp Y   &kp U      &kp I       &kp O              &kp P       &kp BSLH
 &kp LEFT_CONTROL  &kp A         &kp S             &kp D         &kp F      &kp G     &kp LEFT_ARROW   &kp H   &kp J      &kp K       &kp L              &kp SEMI    &kp APOS
 &kp LSHFT         &kp Z         &kp X             &kp C         &kp V      &kp B     &kp RIGHT_ARROW  &kp N   &kp M      &kp COMMA   &kp DOT            &kp FSLH    &kp ENTER
-&kp C_MUTE        &kp LEFT_WIN  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &mo 1     &kp ENTER        &mo 2   &kp SPACE  &kp DELETE  &kp RIGHT_CONTROL  &kp RETURN
+&kp C_MUTE        &kp LEFT_WIN  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp SPACE  &mo 2     &kp ENTER        &mo 3   &kp SPACE  &kp DELETE  &kp RIGHT_CONTROL  &kp RETURN
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOL_DN>;
             display-name = "LAYER_0";
+        };
+
+        MAC_LAYER {
+            bindings = <
+&trans     &trans            &trans        &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans            &trans        &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp LCTRL  &trans            &trans        &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans            &trans        &trans    &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LCMD  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            display-name = "MAC_LAYER";
         };
 
         LAYER_1 {
@@ -85,23 +97,11 @@
 &out OUT_TOG  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &rgb_ug RGB_BRI  &rgb_ug RGB_SPI  &trans      &rgb_ug RGB_EFF  &bl BL_TOG   &rgb_ug RGB_TOG
 &trans        &bt BT_CLR    &trans        &trans        &trans        &trans          &mmv MOVE_DOWN   &rgb_ug RGB_BRD  &rgb_ug RGB_SPD  &trans      &rgb_ug RGB_EFR  &trans       &trans
 &trans        &out OUT_USB  &out OUT_BLE  &trans        &trans        &trans          &mmv MOVE_LEFT   &trans           &trans           &trans      &trans           &trans       &trans
-&trans        &sys_reset    &trans        &bootloader   &trans        &kp CAPS        &mmv MOVE_RIGHT  &trans           &tog 4           &sys_reset  &soft_off        &bootloader  &trans
+&trans        &sys_reset    &trans        &bootloader   &trans        &kp CAPS        &mmv MOVE_RIGHT  &trans           &tog 1           &sys_reset  &soft_off        &bootloader  &trans
 &trans        &trans        &trans        &trans        &trans        &trans          &mkp LCLK        &trans           &trans           &trans      &trans           &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
-        };
-
-        MAC_LAYER {
-            bindings = <
-&trans    &trans            &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans            &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LGUI  &trans            &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &trans            &trans    &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans    &kp LEFT_CONTROL  &kp LGUI  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-            >;
-
-            display-name = "MAC_LAYER";
         };
     };
 
@@ -109,8 +109,8 @@
         compatible = "zmk,conditional-layers";
 
         L1+L2 {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <2 3>;
+            then-layer = <4>;
         };
     };
 };
